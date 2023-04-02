@@ -1,0 +1,77 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container">
+    <div class="row">
+                              <div class="col">
+                              <img src="static/images/marjors-suite.png" class="img-fluid img-thumbnail mx-auto d-block room-image" alt="Room image">
+                              </div>
+                            </div>
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center mt-4"> This is Room 2</h1>
+            <h7> This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.This is Booking the wolrd's leeding reservation web site is typically does nothing.</h7>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+        <a href="#!" class="btn btn-success" id="check-availability-btn">Check Availability</a>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+{{end}}
+
+{{define "js"}}
+
+    <script>
+        // here iam adding an event listener to this element and the event is clicking and what happens is the function which is inline function
+		document.getElementById("check-availability-btn").addEventListener("click", function () {
+			// using `` quotes which is not the usual '' 
+			let html=` 
+				<form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
+					<div class="form-row">
+						<div class="col">
+							<div class="form-row" id="reservation-dates-modal">
+								<div class="col">
+									<input required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
+								</div>
+								<div class="col">
+								<input required class="form-control" type="text" name="end" id="end" placeholder="Departure">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			`
+		
+			// notify("This is my message!","Success!"); This is to test the notie package
+
+			// Trying sweetalert2 package
+			// notifyModal("error","Are You Sure !","error","Another Chance"); 
+
+			// attention.toast({ msg: "Hello World", icon: "error" });
+			attention.custom({msg:html,title:"Choose your date"});
+			// let used to define variables
+			let myEl = document.getElementById("myParagraph");
+			// check if it contains redText as class
+			// if(myEl.classList.contains("redText")){
+			// 	// if it does, remove it
+			// 	myEl.classList.remove("redText");
+			// }else {
+			// 	// // here iam adding redText to the list of classes this element has which has the above id
+			// 	myEl.classList.add("redText");
+			// }
+
+
+		});
+
+    </script>
+    {{end}}

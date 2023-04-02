@@ -37,3 +37,27 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap["remote_ip"] = remoteIP
 	render.RenderTemplate(w, "about.page.html", &models.TemplateData{StringMap: stringMap})
 }
+
+func (m *Repository) MakeReservation(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "reservation.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) Room1(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "room1.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) Room2(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "room2.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) SearchAvailability(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "search-availability.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "contact.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) NewRes(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "new.page.html", &models.TemplateData{})
+}
